@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start-app1": "ng serve --project app1 --base-href /app1/ --port 4201"
+    "start-app1": "ng serve --project app1 --base-href /app1/ --port 4201",
+    "start-app2": "ng serve --project app2 --base-href /app2/ --port 4202"
   },
   "private": true,
   "dependencies": {
