@@ -354,6 +354,46 @@
           }
         }
       }
+    },
+    "training-angular-library": {
+      "root": "projects/training-angular-library",
+      "sourceRoot": "projects/training-angular-library/src",
+      "projectType": "library",
+      "prefix": "tal",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/training-angular-library/tsconfig.lib.json",
+            "project": "projects/training-angular-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/training-angular-library/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/training-angular-library/src/test.ts",
+            "tsConfig": "projects/training-angular-library/tsconfig.spec.json",
+            "karmaConfig": "projects/training-angular-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/training-angular-library/tsconfig.lib.json",
+              "projects/training-angular-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "training-multi-angular-project"
